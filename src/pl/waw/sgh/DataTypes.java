@@ -16,9 +16,13 @@ public class DataTypes {
         int i2 = 985245454
                 int i3 = i1 + i2;
   */
-        long i1 = 165419849;
-        long i2 = 4165498498;
-        long i3 = i1 + i2
+        int i1 = 1434535355;
+        int i2 = 985245454;
+        long i3 = i1;
+        // i3 = i3 + 12
+        i3 += i2;
+        /// long i3 = i1 + i2;
+
         //sout
         // Python : str(i3)
         System.out.println("i3: " + i3);
