@@ -13,6 +13,7 @@ public class BowIsRecursion {
         else return sumBowls(row - 1) + 1;
 
 
-        System.out.println("Bowls in row 5: " + sumBowls(5));
+        //System.out.println("Bowls in row 5: " + sumBowls(5));
+        //quick question wtf
     }
 }
