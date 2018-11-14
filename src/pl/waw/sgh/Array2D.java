@@ -1,7 +1,5 @@
 package pl.waw.sgh;
 
-import java.util.Arrays;
-
 public class Array2D {
     public static void printRow(int[] row) {
         for (int i : row) {
@@ -9,18 +7,6 @@ public class Array2D {
             System.out.print("\t");
         }
         System.out.println();
-    }
-
-    public static int[] sumRow(int[][] arr2d) {
-        int[] rowSum = new int[arr2d.length];
-        for (int i = 0; i < arr2d.length; i++) {
-            rowSum[i] = 0;
-            for (int j = 0; j < arr2d[i].length; j++) {
-                rowSum[i] += arr2d[i][j];
-            }
-        }
-
-        return rowSum;
     }
 
     public static void main(String[] args) {
@@ -43,8 +29,57 @@ public class Array2D {
         //System.out.println(Arrays.deepToString(arr2d));
         for (int[] row : arr2d) {
             printRow(row);
-            sumRow(arr2d);
         }
+        sum(arr2d);
+        System.out.println("Sum of all the elements in table = " + sum(arr2d));
+        System.out.println("SUMS OF ROWS");
+        for (int row = 0; row < arr2d.length; row++) {
+            int sum;
+            sum = 0;
+            for (int col = 0; col < arr2d[row].length; col++) {
+                sum += arr2d[row][col];
+            }
+
+            System.out.println("The sum for row " + (row + 1) + " = " + sum);
+        }
+        System.out.println("SUMS OF COLS");
+        for (int col = 0; col < arr2d.length; col++) {
+            int sum;
+            sum = 0;
+            for (int row = 0; row < arr2d[col].length; row++) {
+                sum += arr2d[row][col];
+            }
+            System.out.println("The sum for col " + (col + 1) + " = " + sum);
+        }
+
     }
+
+    public static int sum(int[][] arr2d) {
+        int arr2dSum = 0;
+        for (int i = 0; i < arr2d.length; i++) {
+
+            for (int j = 0; j < arr2d.length; j++) {
+                arr2dSum += arr2d[i][j];
+            }
+
+        }
+
+        return arr2dSum;
+
+    }
+    /*public static int rowSum(int [][] arr2d) {
+        int rowSum = 0;
+
+            for (int j=0; j<arr2d.length; j++){
+                rowSum += arr2d[0][j];
+
+
+        }
+        System.out.println(rowSum);
+            return rowSum;
+
+    }*/
+
+
 }
 
