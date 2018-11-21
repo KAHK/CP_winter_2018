@@ -3,7 +3,10 @@ package pl.waw.sgh;
 import java.io.File;
 
 public class DirSize {
-    private static long counter = 0;
+    public static void main(String[] args) {
+        System.out.println("Hello!");
+    }
+    /*private static long counter = 0;
 
     public static void CheckDirectorySize(File newFile) {
         File[] files = newFile.listFiles();
@@ -27,5 +30,5 @@ public class DirSize {
             long totalSize = CheckDirectorySize(newFile);
             System.out.println("Total size" + totalSize);
 
-        }
+        }*/
     }
