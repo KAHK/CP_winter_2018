@@ -8,6 +8,7 @@ public abstract class Account {
     private BigDecimal balance;
 
     private String currency = "USD";
+
     private Customer customer;
 
     public Account(Integer accountID, Double balance, String currency, Customer customer) {
@@ -26,11 +27,12 @@ public abstract class Account {
     }
 
     public void deposit(Double amount) {
+        balance = balance.add(new BigDecimal(amount));
 
     }
 
     public void charge(Double amount) {
-        BigDecimal res = balance.add(new BigDecimal(5));
+        balance = balance.subtract(new BigDecimal(amount));
     }
 
     public Integer getAccountID() {

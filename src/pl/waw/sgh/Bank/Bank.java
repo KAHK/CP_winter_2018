@@ -2,6 +2,8 @@ package pl.waw.sgh.Bank;
 
 import pl.waw.sgh.L;
 
+import java.math.BigDecimal;
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +44,21 @@ public class Bank {
         return acc;
     }
 
+    private Account findAccountByID(Integer accID) {
+
+        for (Account acc : accList) {
+            acc.getAccountID().equals(accID))
+            return acc;
+        }
+        return null;
+    }
+
+    public void transfer(Integer fromAccID, Integer toAccID, Double amount) {
+        fromAccID charge (amount);
+        toAccID deposit (amount);
+
+    }
+
     @Override
     public String toString() {
         return "Bank{" +
@@ -49,4 +66,6 @@ public class Bank {
                 ", \naccs=\n" + accList +
                 '}';
     }
+
+
 }
