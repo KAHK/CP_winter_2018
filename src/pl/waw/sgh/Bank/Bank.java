@@ -2,6 +2,7 @@ package pl.waw.sgh.Bank;
 
 import pl.waw.sgh.L;
 
+import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
@@ -44,18 +45,53 @@ public class Bank {
         return acc;
     }
 
-    private Account findAccountByID(Integer accID) {
-
+    private Account findAccountByID(Integer accID) throws NonExistingAccountException {
         for (Account acc : accList) {
-            acc.getAccountID().equals(accID))
+            /*if (acc.getAccountID().equals(accID))
+            return acc;*/
             return acc;
         }
-        return null;
+        throw new NonExistingAccountException(accID);
     }
 
-    public void transfer(Integer fromAccID, Integer toAccID, Double amount) {
-        fromAccID charge (amount);
-        toAccID deposit (amount);
+
+    public void transfer(int fromAccID, int toAccID, Double amount)
+            throws NotEnoughMoneyException {
+        try {
+
+            Account fromAcc = findAccountByID(fromAccID);
+            Account toAcc = findAccountByID(toAccID);
+            fromAcc.charge(amount);
+            toAcc.deposit(amount);
+        } catch (NonExistingAccountException e) {
+            System.out.println("No such account");
+        }
+
+        /*if (FromAcc==null)
+        {
+
+            JOptionPane.showMessageDialog(null,"The account you want to transfer money from  " +
+                    "does not exist.");
+            return;
+        }
+
+        if (ToAcc==null)
+        {
+            JOptionPane.showMessageDialog(null,"The account you want to transfer money to " +
+                    "does not exist.");
+            return;
+        }
+
+        if(new BigDecimal(amount).compareTo(FromAcc.getBalance()) == 1)
+        {
+            JOptionPane.showMessageDialog(null,"Not enough money to finalize the transfer.");
+            return;
+        }
+        if(amount < 0)
+        {
+            JOptionPane.showMessageDialog(null, "You can not transfer negative values.");
+            return;
+        }*/
 
     }
 
