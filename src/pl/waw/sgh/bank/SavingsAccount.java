@@ -1,4 +1,4 @@
-package pl.waw.sgh.Bank;
+package pl.waw.sgh.bank;
 
 public class SavingsAccount extends Account {
     public SavingsAccount(Integer accountID, Double balance, String currency, Customer customer) {

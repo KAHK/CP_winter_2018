@@ -1,4 +1,4 @@
-package pl.waw.sgh.Bank;
+package pl.waw.sgh.bank;
 
 public class NonExistingAccountException extends BankException {
 

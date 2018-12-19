@@ -1,4 +1,4 @@
-package pl.waw.sgh.Object;
+package pl.waw.sgh.object;
 
 public class PlayWithRectangles {
     public static void main(String[] args) {

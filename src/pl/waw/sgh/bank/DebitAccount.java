@@ -1,6 +1,4 @@
-package pl.waw.sgh.Bank;
-
-import java.math.BigDecimal;
+package pl.waw.sgh.bank;
 
 public class DebitAccount extends Account {
     public DebitAccount(Integer accountID, Double balance, String currency,

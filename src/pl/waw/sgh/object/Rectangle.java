@@ -1,4 +1,4 @@
-package pl.waw.sgh.Object;
+package pl.waw.sgh.object;
 
 public class Rectangle {
     double parA = 0;

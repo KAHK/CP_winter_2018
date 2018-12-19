@@ -1,10 +1,5 @@
-package pl.waw.sgh.Bank;
+package pl.waw.sgh.bank;
 
-import pl.waw.sgh.L;
-
-import javax.swing.*;
-import java.math.BigDecimal;
-import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,6 +62,31 @@ public class Bank {
             System.out.println("No such account");
         }
 
+        private int findCurCustIdx (Integer) {
+
+        }
+
+        public Customer getPrevCustomer (Integer curCustID){
+            int curCustIdx = -1;
+            for (Customer cust : custList) {
+                if (cust.getCustomerID().equals(curCustID))
+                    custList.indexOf(cust);
+            }
+            if (curCustIdx > 0)
+                return custList.get(curCustIdx - 1);
+            else
+                return null;
+        }
+        public Customer getNextCustomer (Integer curCustID){
+            int curCustIdx = findCurCustIdx(curCustID);
+            if (curCustIdx < custList.size() - 1)
+                return custList.get(CurCustIdx + 1);
+            else
+                return null;
+
+        }
+
+
         /*if (FromAcc==null)
         {
 
@@ -97,7 +117,7 @@ public class Bank {
 
     @Override
     public String toString() {
-        return "Bank{" +
+        return "bank{" +
                 "custs=\n" + custList +
                 ", \naccs=\n" + accList +
                 '}';
