@@ -86,7 +86,13 @@ public class Bank {
 
         }
 
-
+        private List<Account> findAccountsByCustomerID (Integer customerID){
+            List<Account> customerList = new ArrayList<>();
+            for (Account acc : accList) {
+                if (acc.getCustomer().getCustomerID().equals(customerID))
+                    customerList.add(acc);
+            }
+            return customerList;
         /*if (FromAcc==null)
         {
 
